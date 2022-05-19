@@ -5,9 +5,9 @@ This Python template lets you get started quickly with a simple one-page playgro
 ```python runnable
 import sys
 import math
-print("veuilles entrer la liste de W séparé par un espace:")
+print("veuilles entrer la liste de W séparé par un espace exemple: 0.05 0.1 0.2\nA vous !")
 # retirez le tableau et le '#' pour rentrer manuellement le poid 
-w = [0.05,0.1,0.2]#input().split()
+w = """[0.05,0.1,0.2]"""input().split()
 
 # initialisation de la variable de la sortie
 y=0
@@ -17,11 +17,11 @@ entree = [["100",0],["101",0],["111",1],["110",0]]
 
 print("indiquez le nu:")
 # retirez la valeur et le '#' pour rentrer manuellement le nu
-nu = 0.03#input()
+nu = """0.03"""input()
 
 # choix de l'entrée parmis le tableau 'entree'
 print("pour choisir une entrée merci de prendre la valeur associer à l'entrée:\n",entree[:])
-index_entree = 0#input()
+index_entree = input()
 
 
 
@@ -49,13 +49,11 @@ for i in range(10):
     wixi = calcul_wixi(index_entree)
     print("wixi =",wixi,"\nentree: ",entree[index_entree])
 
-    # Sortie en fonction du WIXI, on assigne aussi Y
+    # On assigne Y
     if wixi>0:
         y=1
-        print("y =", y)
     else:
         y = 0
-        print("y =",y)
 
     # Vérifie si la sortie est correct (Y == cible)
     verif_y_cible(wixi,index_entree, entree)
@@ -64,7 +62,6 @@ for i in range(10):
     # On calcul les nouveaux poids
     ajustement_poids(nu,entree,index_entree,y,w)
     print("nouveau poids: ",w[:])
-
 
 
 ```
