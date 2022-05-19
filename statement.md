@@ -3,6 +3,8 @@
 This Python template lets you get started quickly with a simple one-page playground.
 
 ```python runnable
+# Pierre Leriche Mehdi El Amine
+
 import sys
 import math
 print("veuilles entrer la liste de W séparé par un espace exemple: 0.05 0.1 0.2\nA vous !")
@@ -14,6 +16,9 @@ y=0
 
 # liste d'entrée
 entree = [["100",0],["101",0],["111",1],["110",0]]
+print("choisir \"OU\" ou \"ET\"")
+if input()=="OU":
+    entree = [["100",0],["101",1],["111",1],["110",1]]
 
 print("indiquez le nu:")
 # retirez la valeur et le '#' pour rentrer manuellement le nu
@@ -27,7 +32,7 @@ index_entree = 0
 
 def calcul_wixi(i):
     wixi = 0
-    for a in range(len(entree[i])):
+    for a in range(2):
         wixi+=float(entree[i][0][a])*float(w[a])
     return wixi
 
@@ -44,6 +49,7 @@ def ajustement_poids(nu,entree,index_entree,y,w):
         cible = entree[index_entree][1]
         w[i]=nu*(cible-y)*float(entree[index_entree][0][i])+float(w[i])
 
+# --------------- Partie apprentissage --------------- 
 print("[",sep="",end="")
 for i in range(100):
     index_entree+=1
@@ -70,8 +76,19 @@ print("] 100%")
 print("Phase d'apprentissage terminée")
 print("nouveau poids: ",w[:])
 
+# --------------- Partie Evaluation ---------------
+print("\nChoisir votre entree:")
+entree_input = input()
+entree = [["100",0],["101",0],["111",1],["110",0],[str(entree_input),0]]
+index_entree = 4
+wixi = calcul_wixi(index_entree)
 
-
+# On assigne Y
+if wixi>0:
+    y=1
+else:
+    y = 0
+print("Résultat:",y)
 
 ```
 
