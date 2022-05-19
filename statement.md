@@ -21,7 +21,7 @@ nu = 0.03#input()
 
 # choix de l'entrée parmis le tableau 'entree'
 print("pour choisir une entrée merci de prendre la valeur associer à l'entrée:\n",entree[:])
-index_entree = #input()
+index_entree = 0#input()
 
 
 
