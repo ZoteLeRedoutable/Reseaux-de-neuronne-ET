@@ -3,7 +3,7 @@
 This Python template lets you get started quickly with a simple one-page playground.
 
 ```python runnable
-# Pierre Leriche Mehdi El Amine
+# Pierre Leriche
 
 import sys
 import math
